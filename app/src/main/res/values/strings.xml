@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TD_TASK1_1</string>
+    <string name="label_MainActivity">Configuration listener</string>
+    <string name="second_activity">Second Activity</string>
+</resources>
