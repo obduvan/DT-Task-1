@@ -35,7 +35,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         Log.e(javaClass.name, "onCreate")
-
     }
 
     override fun onConfigurationChanged(newConfig: Configuration) {
@@ -50,7 +49,6 @@ class MainActivity : AppCompatActivity() {
         outState.putInt(KEY_NUMBER, number)
 
         Log.e(javaClass.name, "onSaveInstanceState")
-
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
@@ -64,7 +62,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         Log.e(javaClass.name, "onRestoreInstanceState")
-
     }
 
     private fun setViewNumber() {
@@ -79,13 +76,11 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         Log.e(javaClass.name, "Resume")
-
     }
 
     override fun onPause() {
         super.onPause()
         Log.e(javaClass.name, "onPause")
-
     }
 
     override fun onStop() {
@@ -96,13 +91,10 @@ class MainActivity : AppCompatActivity() {
     override fun onRestart() {
         super.onRestart()
         Log.e(javaClass.name, "onRestart")
-
     }
 
     override fun onDestroy() {
         super.onDestroy()
         Log.e(javaClass.name, "onDestroy")
-
     }
-
 }

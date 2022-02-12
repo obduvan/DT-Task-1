@@ -15,7 +15,6 @@ class SquareActivity : AppCompatActivity() {
 
     private var squareNumber = 0
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySquareBinding.inflate(layoutInflater)
@@ -35,6 +34,8 @@ class SquareActivity : AppCompatActivity() {
         super.onSaveInstanceState(outState)
 
         outState.putInt(KEY_SQUARE_NUMBER, squareNumber)
+
+        Log.e(javaClass.name, "onSaveInstanceState")
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
@@ -46,5 +47,32 @@ class SquareActivity : AppCompatActivity() {
         } else {
             Log.e(javaClass.name, "Null bundle from RestoreInstanceState")
         }
+
+        Log.e(javaClass.name, "onRestoreInstanceState")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.e(javaClass.name, "Resume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.e(javaClass.name, "onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.e(javaClass.name, "onStop")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.e(javaClass.name, "onRestart")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.e(javaClass.name, "onDestroy")
     }
 }

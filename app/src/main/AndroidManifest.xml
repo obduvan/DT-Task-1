@@ -12,15 +12,14 @@
         <activity
             android:name=".SquareActivity"
             android:exported="false"
-            android:parentActivityName=".MainActivity"/>
+            android:label="@string/label_second_activity"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
-            android:launchMode="singleTop"
-            android:configChanges="density|fontScale|orientation|keyboard|layoutDirection
-            |locale|mcc|mnc|navigation|orientation|screenLayout|screenSize
-            |smallestScreenSize|touchscreen|uiMode"
+            android:configChanges="density|fontScale|orientation|keyboard|layoutDirection|locale|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode"
             android:exported="true"
-            android:label="@string/label_MainActivity">
+            android:label="@string/label_MainActivity"
+            android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
