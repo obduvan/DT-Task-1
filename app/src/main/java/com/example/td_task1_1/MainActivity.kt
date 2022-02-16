@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
         private const val KEY_NUMBER = "KEY_NUMBER"
     }
 
+    private val logTag = javaClass.name
     private var number = 0
     private lateinit var binding: ActivityMainBinding
 
@@ -34,7 +35,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        Log.e(javaClass.name, "onCreate")
+        Log.i(logTag, "onCreate")
     }
 
     override fun onConfigurationChanged(newConfig: Configuration) {
@@ -48,7 +49,7 @@ class MainActivity : AppCompatActivity() {
 
         outState.putInt(KEY_NUMBER, number)
 
-        Log.e(javaClass.name, "onSaveInstanceState")
+        Log.i(logTag, "onSaveInstanceState")
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
@@ -58,10 +59,10 @@ class MainActivity : AppCompatActivity() {
             number = savedInstanceState.getInt(KEY_NUMBER)
             setViewNumber()
         } else {
-            Log.e(javaClass.name, "Null bundle from RestoreInstanceState")
+            Log.e(logTag, "Null bundle from RestoreInstanceState")
         }
 
-        Log.e(javaClass.name, "onRestoreInstanceState")
+        Log.i(logTag, "onRestoreInstanceState")
     }
 
     private fun setViewNumber() {
@@ -75,26 +76,26 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        Log.e(javaClass.name, "Resume")
+        Log.i(logTag, "onResume")
     }
 
     override fun onPause() {
         super.onPause()
-        Log.e(javaClass.name, "onPause")
+        Log.i(logTag, "onPause")
     }
 
     override fun onStop() {
         super.onStop()
-        Log.e(javaClass.name, "onStop")
+        Log.i(logTag, "onStop")
     }
 
     override fun onRestart() {
         super.onRestart()
-        Log.e(javaClass.name, "onRestart")
+        Log.i(logTag, "onRestart")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.e(javaClass.name, "onDestroy")
+        Log.i(logTag, "onDestroy")
     }
 }

@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".SquareActivity">
 
-
     <TextView
         android:id="@+id/square_number_id"
         android:layout_width="wrap_content"

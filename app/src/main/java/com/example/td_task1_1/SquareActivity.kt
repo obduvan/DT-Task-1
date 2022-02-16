@@ -11,6 +11,7 @@ class SquareActivity : AppCompatActivity() {
         private const val KEY_SQUARE_NUMBER = "KEY_SQUARE_NUMBER"
     }
 
+    private val logTag = javaClass.name
     private lateinit var binding: ActivitySquareBinding
 
     private var squareNumber = 0
@@ -24,6 +25,8 @@ class SquareActivity : AppCompatActivity() {
 
         setViewNumber()
         setContentView(binding.root)
+
+        Log.i(logTag, "onCreate")
     }
 
     private fun setViewNumber() {
@@ -35,7 +38,7 @@ class SquareActivity : AppCompatActivity() {
 
         outState.putInt(KEY_SQUARE_NUMBER, squareNumber)
 
-        Log.e(javaClass.name, "onSaveInstanceState")
+        Log.i(logTag, "onSaveInstanceState")
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
@@ -48,31 +51,31 @@ class SquareActivity : AppCompatActivity() {
             Log.e(javaClass.name, "Null bundle from RestoreInstanceState")
         }
 
-        Log.e(javaClass.name, "onRestoreInstanceState")
+        Log.i(logTag, "onRestoreInstanceState")
     }
 
     override fun onResume() {
         super.onResume()
-        Log.e(javaClass.name, "Resume")
+        Log.i(logTag, "onResume")
     }
 
     override fun onPause() {
         super.onPause()
-        Log.e(javaClass.name, "onPause")
+        Log.i(logTag, "onPause")
     }
 
     override fun onStop() {
         super.onStop()
-        Log.e(javaClass.name, "onStop")
+        Log.i(logTag, "onStop")
     }
 
     override fun onRestart() {
         super.onRestart()
-        Log.e(javaClass.name, "onRestart")
+        Log.i(logTag, "onRestart")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.e(javaClass.name, "onDestroy")
+        Log.i(logTag, "onDestroy")
     }
 }
