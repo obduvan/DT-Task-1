@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TD_TASK1_1</string>
+    <string name="app_name">Configuration listener</string>
     <string name="label_MainActivity">Configuration listener</string>
     <string name="button_second_activity">Second Activity</string>
     <string name="label_second_activity">Square of previous number</string>

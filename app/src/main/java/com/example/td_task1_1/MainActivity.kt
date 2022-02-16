@@ -1,18 +1,15 @@
 package com.example.td_task1_1
 
 import android.content.Intent
-import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.example.td_task1_1.databinding.ActivityMainBinding
-import java.lang.RuntimeException
 
 
 const val KEY_INTENT_NUMBER = "KEY_INTENT_NUMBER"
 
 class MainActivity : AppCompatActivity() {
-
     companion object {
         private const val KEY_NUMBER = "KEY_NUMBER"
     }
@@ -38,15 +35,8 @@ class MainActivity : AppCompatActivity() {
         Log.i(logTag, "onCreate")
     }
 
-    override fun onConfigurationChanged(newConfig: Configuration) {
-        super.onConfigurationChanged(newConfig)
-
-        increaseNumber()
-    }
-
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-
         outState.putInt(KEY_NUMBER, number)
 
         Log.i(logTag, "onSaveInstanceState")
@@ -57,11 +47,10 @@ class MainActivity : AppCompatActivity() {
 
         if (savedInstanceState.containsKey(KEY_NUMBER)) {
             number = savedInstanceState.getInt(KEY_NUMBER)
-            setViewNumber()
+            increaseNumber()
         } else {
             Log.e(logTag, "Null bundle from RestoreInstanceState")
         }
-
         Log.i(logTag, "onRestoreInstanceState")
     }
 

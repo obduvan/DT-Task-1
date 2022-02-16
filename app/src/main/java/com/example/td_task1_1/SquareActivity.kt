@@ -6,14 +6,12 @@ import android.util.Log
 import com.example.td_task1_1.databinding.ActivitySquareBinding
 
 class SquareActivity : AppCompatActivity() {
-
     companion object {
         private const val KEY_SQUARE_NUMBER = "KEY_SQUARE_NUMBER"
     }
 
     private val logTag = javaClass.name
     private lateinit var binding: ActivitySquareBinding
-
     private var squareNumber = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,7 +33,6 @@ class SquareActivity : AppCompatActivity() {
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-
         outState.putInt(KEY_SQUARE_NUMBER, squareNumber)
 
         Log.i(logTag, "onSaveInstanceState")
@@ -50,7 +47,6 @@ class SquareActivity : AppCompatActivity() {
         } else {
             Log.e(javaClass.name, "Null bundle from RestoreInstanceState")
         }
-
         Log.i(logTag, "onRestoreInstanceState")
     }
 
