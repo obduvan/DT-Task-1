@@ -16,13 +16,13 @@ class SquareActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivitySquareBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val num = intent.getIntExtra(KEY_INTENT_NUMBER, 0)
         squareNumber = num * num
-
         setViewNumber()
-        setContentView(binding.root)
 
         Log.i(logTag, "onCreate")
     }
@@ -45,7 +45,7 @@ class SquareActivity : AppCompatActivity() {
             squareNumber = savedInstanceState.getInt(KEY_SQUARE_NUMBER)
             setViewNumber()
         } else {
-            Log.e(javaClass.name, "Null bundle from RestoreInstanceState")
+            Log.e(logTag, "Null bundle from RestoreInstanceState")
         }
         Log.i(logTag, "onRestoreInstanceState")
     }

@@ -22,8 +22,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
-        binding.number.text = number.toString()
         setContentView(binding.root)
+        setViewNumber()
 
         binding.btSecondActivity.setOnClickListener {
             val intent = Intent(this, SquareActivity::class.java).apply {
@@ -48,6 +48,7 @@ class MainActivity : AppCompatActivity() {
         if (savedInstanceState.containsKey(KEY_NUMBER)) {
             number = savedInstanceState.getInt(KEY_NUMBER)
             increaseNumber()
+            setViewNumber()
         } else {
             Log.e(logTag, "Null bundle from RestoreInstanceState")
         }
@@ -60,7 +61,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun increaseNumber() {
         number += 1
-        setViewNumber()
     }
 
     override fun onResume() {
